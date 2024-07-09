@@ -10,6 +10,8 @@ echo "*** goimports -d ***"
 goimports -d .
 echo "*** misspell ***"
 misspell .
+echo "*** shadow ***"
+shadow ./...
 echo "*** golint ***"
 golint .
 
