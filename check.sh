@@ -11,8 +11,10 @@ goimports -d .
 echo "*** misspell ***"
 misspell .
 echo "*** shadow ***"
-shadow ./...
+find . -name "*.go" -exec shadow {} \;
 echo "*** golint ***"
 golint .
+echo "*** go fix ***"
+find . -name "*.go" -exec go fix --diff {} \;
 
 #golangci-lint run main.go
