@@ -16,5 +16,7 @@ echo "*** golint ***"
 golint .
 echo "*** go fix ***"
 find . -name "*.go" -exec go fix --diff {} \;
+echo "*** govulncheck ***"
+govulncheck ./...
 
 #golangci-lint run main.go
